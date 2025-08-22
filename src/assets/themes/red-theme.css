@@ -1,0 +1,167 @@
+/**
+ * Red Theme for Super Productivity
+ * A vibrant red theme with excellent contrast and accessibility
+ * Based on Material Design Red color palette
+ */
+
+/* Smooth transitions */
+:root {
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+}
+
+body {
+  /* ===============================
+   * RED COLOR PALETTE
+   * ===============================*/
+
+  /* Primary Red Shades */
+  --red-50: #ffebee;
+  --red-100: #ffcdd2;
+  --red-200: #ef9a9a;
+  --red-300: #e57373;
+  --red-400: #ef5350;
+  --red-500: #f44336; /* Primary red */
+  --red-600: #e53935;
+  --red-700: #d32f2f; /* Dark red */
+  --red-800: #c62828;
+  --red-900: #b71c1c; /* Darkest red */
+
+  /* Accent Red Shades */
+  --red-a100: #ff8a80;
+  --red-a200: #ff5252;
+  --red-a400: #ff1744;
+  --red-a700: #d50000;
+
+  /* ===============================
+   * THEME COLORS OVERRIDE
+   * ===============================*/
+
+  /* Primary color (main red) */
+  --c-primary: var(--red-700);
+  --palette-primary-50: var(--red-50);
+  --palette-primary-100: var(--red-100);
+  --palette-primary-200: var(--red-200);
+  --palette-primary-300: var(--red-300);
+  --palette-primary-400: var(--red-400);
+  --palette-primary-500: var(--red-500);
+  --palette-primary-600: var(--red-600);
+  --palette-primary-700: var(--red-700);
+  --palette-primary-800: var(--red-800);
+  --palette-primary-900: var(--red-900);
+
+  /* Accent color (bright red) */
+  --c-accent: var(--red-a200);
+  --palette-accent-100: var(--red-a100);
+  --palette-accent-200: var(--red-a200);
+  --palette-accent-400: var(--red-a400);
+  --palette-accent-700: var(--red-a700);
+
+  /* Warn color (darker red) */
+  --c-warn: var(--red-900);
+
+  /* ===============================
+   * LIGHT THEME ADJUSTMENTS
+   * ===============================*/
+
+  /* Enhanced backgrounds for better red contrast */
+  --bg: #fafafa;
+  --bg-darker: #f5f5f5;
+  --bg-slightly-lighter: #ffffff;
+  --bg-lighter: #ffffff;
+  --bg-lightest: #ffffff;
+  --card-bg: #ffffff;
+  --sidebar-bg: #f8f8f8;
+
+  /* Selected states with red tints */
+  --selected-task-bg-color: var(--red-50);
+  --task-c-selected-bg: var(--red-50);
+  --task-c-current-bg: var(--red-100);
+
+  /* Subtle red accents for UI elements */
+  --extra-border-color: var(--red-200);
+  --separator-color: var(--red-100);
+
+  /* Progress and interactive elements */
+  --progress-bg: var(--red-100);
+
+  /* Enhanced contrast for text on red backgrounds */
+  --palette-primary-contrast-50: #000000;
+  --palette-primary-contrast-100: #000000;
+  --palette-primary-contrast-200: #000000;
+  --palette-primary-contrast-300: #000000;
+  --palette-primary-contrast-400: #ffffff;
+  --palette-primary-contrast-500: #ffffff;
+  --palette-primary-contrast-600: #ffffff;
+  --palette-primary-contrast-700: #ffffff;
+  --palette-primary-contrast-800: #ffffff;
+  --palette-primary-contrast-900: #ffffff;
+}
+
+/* ===============================
+ * DARK THEME ADJUSTMENTS
+ * ===============================*/
+
+body.isDarkTheme {
+  /* Red colors work well with dark backgrounds */
+  --c-primary: var(--red-400);
+  --c-accent: var(--red-a200);
+  --c-warn: var(--red-a400);
+
+  /* Adjusted red shades for dark theme */
+  --palette-primary-300: var(--red-400);
+  --palette-primary-400: var(--red-300);
+  --palette-primary-500: var(--red-400);
+  --palette-primary-600: var(--red-500);
+
+  /* Dark theme selected states */
+  --selected-task-bg-color: rgba(244, 67, 54, 0.1);
+  --task-c-selected-bg: rgba(244, 67, 54, 0.15);
+  --task-c-current-bg: rgba(244, 67, 54, 0.2);
+
+  /* Dark theme borders */
+  --extra-border-color: rgba(244, 67, 54, 0.2);
+  --separator-color: rgba(244, 67, 54, 0.1);
+}
+
+/* ===============================
+ * COMPONENT SPECIFIC OVERRIDES
+ * ===============================*/
+
+/* Breathing dot animation - red glow */
+.breathing-dot-inner {
+  background-color: var(--red-500) !important;
+  box-shadow: 0 0 40px var(--red-500) !important;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    box-shadow: 0 0 10px var(--red-500) !important;
+  }
+  50% {
+    box-shadow:
+      0 0 30px var(--red-500),
+      0 0 120px var(--red-500) !important;
+  }
+}
+
+/* Progress indicators */
+.svg {
+  stroke: var(--red-500) !important;
+}
+
+/* Focus and hover states */
+.cdk-drop-list-dragging,
+.cdk-drop-list-receiving {
+  outline-color: var(--red-500) !important;
+  border-color: var(--red-500) !important;
+}
+
+/* Material Design integration */
+:root {
+  --mat-theme-primary: var(--red-700);
+  --mat-theme-secondary: var(--red-a200);
+  --mat-fab-small-container-color: var(--red-500);
+  --mat-sys-primary-container: var(--red-500);
+}

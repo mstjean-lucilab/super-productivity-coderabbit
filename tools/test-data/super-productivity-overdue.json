@@ -32,7 +32,7 @@
           "theme": {
             "isAutoContrast": true,
             "isDisableBackgroundGradient": false,
-            "primary": "rgb(144, 187, 165)",
+            "primary": "#d32f2f",
             "huePrimary": "500",
             "accent": "#ff4081",
             "hueAccent": "500",
@@ -67,7 +67,7 @@
           "theme": {
             "isAutoContrast": false,
             "isDisableBackgroundGradient": false,
-            "primary": "#6495ED",
+            "primary": "#d32f2f",
             "huePrimary": "400",
             "accent": "#ff4081",
             "hueAccent": "500",
