@@ -27,7 +27,7 @@ export const INBOX_PROJECT: Project = {
   id: 'INBOX_PROJECT',
   theme: {
     ...WORK_CONTEXT_DEFAULT_THEME,
-    primary: 'rgb(144, 187, 165)',
+    primary: '#d32f2f',
     backgroundImageDark: '',
     isDisableBackgroundGradient: false,
   },

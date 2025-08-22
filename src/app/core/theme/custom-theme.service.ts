@@ -17,6 +17,12 @@ export const AVAILABLE_CUSTOM_THEMES: CustomTheme[] = [
     requiredMode: 'system',
   },
   {
+    id: 'red-theme',
+    name: 'Red Theme',
+    url: 'assets/themes/red-theme.css',
+    requiredMode: 'system',
+  },
+  {
     id: 'arc',
     name: 'Arc',
     url: 'assets/themes/arc.css',

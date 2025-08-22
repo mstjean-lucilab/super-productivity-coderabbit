@@ -1,7 +1,7 @@
 {
   "name": "Super Productivity",
   "short_name": "sup",
-  "theme_color": "#6495ED",
+  "theme_color": "#d32f2f",
   "background_color": "#fff",
   "start_url": "./index.html",
   "display": "standalone",
