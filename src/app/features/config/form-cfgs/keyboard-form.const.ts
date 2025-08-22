@@ -383,6 +383,13 @@ export const KEYBOARD_SETTINGS_FORM_CFG: ConfigFormSection<KeyboardConfig> = {
         label: T.GCF.KEYBOARD.TASK_EDIT_TAGS,
       },
     },
+    {
+      key: 'taskTogglePriority',
+      type: 'keyboard',
+      templateOptions: {
+        label: T.GCF.KEYBOARD.TASK_TOGGLE_PRIORITY,
+      },
+    },
   ],
 };
 /* eslint-enable max-len */

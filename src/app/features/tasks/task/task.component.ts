@@ -522,6 +522,10 @@ export class TaskComponent implements OnDestroy, AfterViewInit {
     );
   }
 
+  cyclePriority(): void {
+    this._taskService.cyclePriority(this.task());
+  }
+
   focusPrevious(isFocusReverseIfNotPossible: boolean = false): void {
     if (IS_TOUCH_PRIMARY) {
       return;
@@ -977,6 +981,9 @@ export class TaskComponent implements OnDestroy, AfterViewInit {
     }
     if (checkKeyCombo(ev, keys.taskEditTags)) {
       this.editTags();
+    }
+    if (checkKeyCombo(ev, keys.taskTogglePriority)) {
+      this._taskService.cyclePriority(t);
     }
     if (checkKeyCombo(ev, keys.taskDelete)) {
       this.deleteTask();

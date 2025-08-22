@@ -190,6 +190,14 @@ export type PluginHookHandler<T extends Hooks = Hooks> = (
   payload: T extends keyof HookPayloadMap ? HookPayloadMap[T] : unknown,
 ) => void | Promise<void>;
 
+// Task priority levels
+export enum TaskPriority {
+  NONE = 0,
+  LOW = 1,
+  MEDIUM = 2,
+  HIGH = 3,
+}
+
 // Core data types - Single source of truth for both plugins and app
 export interface Task {
   id: string;
@@ -204,6 +212,7 @@ export interface Task {
   created: number;
   updated?: number;
   subTaskIds: string[];
+  priority?: TaskPriority;
 
   // Additional fields for internal use (plugins can read but shouldn't modify)
   timeSpentOnDay?: { [key: string]: number };
