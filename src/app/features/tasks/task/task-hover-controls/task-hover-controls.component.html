@@ -64,6 +64,17 @@
     <mat-icon>check</mat-icon>
   </button>
 }
+<button
+  (click)="onPriorityClick()"
+  [title]="getPriorityTooltip(task().priority)"
+  class="ico-btn priority-btn"
+  color=""
+  mat-icon-button
+>
+  <mat-icon [style.color]="getPriorityColor(task().priority)">{{
+    getPriorityIcon(task().priority)
+  }}</mat-icon>
+</button>
 @if (
   !task().notes && (!task().issueId || task().issueType === ICAL_TYPE) && !isSelected()
 ) {

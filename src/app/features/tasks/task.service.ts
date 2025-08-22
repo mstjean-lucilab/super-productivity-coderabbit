@@ -15,6 +15,7 @@ import {
   TaskState,
   TaskWithSubTasks,
 } from './task.model';
+import { TaskPriority } from '@super-productivity/plugin-api';
 import { select, Store } from '@ngrx/store';
 import {
   addSubTask,
@@ -334,6 +335,30 @@ export class TaskService {
         },
       }),
     );
+  }
+
+  cyclePriority(task: Task): void {
+    const currentPriority = task.priority ?? TaskPriority.NONE;
+    let nextPriority: TaskPriority;
+
+    switch (currentPriority) {
+      case TaskPriority.NONE:
+        nextPriority = TaskPriority.LOW;
+        break;
+      case TaskPriority.LOW:
+        nextPriority = TaskPriority.MEDIUM;
+        break;
+      case TaskPriority.MEDIUM:
+        nextPriority = TaskPriority.HIGH;
+        break;
+      case TaskPriority.HIGH:
+        nextPriority = TaskPriority.NONE;
+        break;
+      default:
+        nextPriority = TaskPriority.LOW;
+    }
+
+    this.update(task.id, { priority: nextPriority });
   }
 
   removeTagsForAllTask(tagsToRemove: string[]): void {

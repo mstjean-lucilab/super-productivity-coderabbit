@@ -9,6 +9,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { KeyboardConfig } from '../../../config/keyboard-config.model';
 import { ICAL_TYPE } from '../../../issue/issue.const';
 import { MatIconButton } from '@angular/material/button';
+import { TaskPriority } from '@super-productivity/plugin-api';
 
 @Component({
   selector: 'task-hover-controls',
@@ -36,4 +37,51 @@ export class TaskHoverControlsComponent {
   }
 
   protected readonly ICAL_TYPE = ICAL_TYPE;
+  protected readonly TaskPriority = TaskPriority;
+
+  getPriorityIcon(priority?: TaskPriority): string {
+    switch (priority) {
+      case TaskPriority.HIGH:
+        return 'keyboard_double_arrow_up';
+      case TaskPriority.MEDIUM:
+        return 'keyboard_arrow_up';
+      case TaskPriority.LOW:
+        return 'keyboard_arrow_down';
+      case TaskPriority.NONE:
+      default:
+        return 'low_priority';
+    }
+  }
+
+  getPriorityColor(priority?: TaskPriority): string {
+    switch (priority) {
+      case TaskPriority.HIGH:
+        return '#f44336'; // red
+      case TaskPriority.MEDIUM:
+        return '#ff9800'; // orange
+      case TaskPriority.LOW:
+        return '#2196f3'; // blue
+      case TaskPriority.NONE:
+      default:
+        return '#757575'; // gray
+    }
+  }
+
+  getPriorityTooltip(priority?: TaskPriority): string {
+    switch (priority) {
+      case TaskPriority.HIGH:
+        return 'Priority: High [r]';
+      case TaskPriority.MEDIUM:
+        return 'Priority: Medium [r]';
+      case TaskPriority.LOW:
+        return 'Priority: Low [r]';
+      case TaskPriority.NONE:
+      default:
+        return 'Set Priority [r]';
+    }
+  }
+
+  onPriorityClick(): void {
+    this.parent.cyclePriority();
+  }
 }

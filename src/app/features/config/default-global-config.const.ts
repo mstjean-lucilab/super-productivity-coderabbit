@@ -117,6 +117,7 @@ export const DEFAULT_GLOBAL_CONFIG: GlobalConfigState = {
     taskToggleDetailPanelOpen: 'i',
     taskOpenEstimationDialog: 't',
     taskSchedule: 's',
+    taskTogglePriority: 'r',
     taskToggleDone: 'd',
     taskAddSubTask: 'a',
     taskAddAttachment: 'l',
