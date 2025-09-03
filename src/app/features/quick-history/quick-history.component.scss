@@ -204,3 +204,79 @@ $this-border-radius: 8px;
 .no-data {
   text-align: center;
 }
+
+// Styles for the time adjustment buttons
+.time-input-with-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--s) calc(var(--s) * 1.5);
+}
+
+.time-adjustment-buttons {
+  display: flex;
+  flex-direction: column;
+  margin: 0 4px;
+}
+
+.time-btn {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: bold;
+  margin: 1px 0;
+  padding: 4px 6px;
+  text-align: center;
+  width: 35px;
+  height: 20px;
+  line-height: 10px;
+}
+
+.time-btn:hover {
+  background-color: #e0e0e0;
+  border-color: #999;
+}
+
+.time-btn:active {
+  background-color: #d0d0d0;
+  transform: scale(0.95);
+}
+
+.time-btn.minus-fifteen {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.time-btn.minus-five {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.time-btn.plus-five {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+}
+
+.time-btn.plus-fifteen {
+  background-color: #e8f5e8;
+  color: #2e7d32;
+}
+
+.time-btn.minus-fifteen:hover {
+  background-color: #ffcdd2;
+}
+
+.time-btn.minus-five:hover {
+  background-color: #ffcdd2;
+}
+
+.time-btn.plus-five:hover {
+  background-color: #c8e6c9;
+}
+
+.time-btn.plus-fifteen:hover {
+  background-color: #c8e6c9;
+}

@@ -118,18 +118,58 @@
                     logEntry.task.timeSpentOnDay[day.value.dateStr] | msToClockString
                   }}</span
                 >
-                <inline-input
-                  (changed)="
-                    updateTimeSpentTodayForTask(logEntry.task, day.value.dateStr, $event)
-                  "
+                <div
                   *ngIf="!logEntry.task.subTaskIds || !logEntry.task.subTaskIds.length"
-                  [displayValue]="
-                    logEntry.task.timeSpentOnDay[day.value.dateStr] | msToClockString
-                  "
-                  [type]="'duration'"
-                  [value]="logEntry.task.timeSpentOnDay[day.value.dateStr]"
+                  class="time-input-with-buttons"
                 >
-                </inline-input>
+                  <div class="time-adjustment-buttons">
+                    <button
+                      class="time-btn minus-fifteen"
+                      (click)="adjustTime(logEntry.task, day.value.dateStr, -15)"
+                      title="Subtract 15 minutes"
+                    >
+                      -15m
+                    </button>
+                    <button
+                      class="time-btn minus-five"
+                      (click)="adjustTime(logEntry.task, day.value.dateStr, -5)"
+                      title="Subtract 5 minutes"
+                    >
+                      -5m
+                    </button>
+                  </div>
+                  <inline-input
+                    (changed)="
+                      updateTimeSpentTodayForTask(
+                        logEntry.task,
+                        day.value.dateStr,
+                        $event
+                      )
+                    "
+                    [displayValue]="
+                      logEntry.task.timeSpentOnDay[day.value.dateStr] | msToClockString
+                    "
+                    [type]="'duration'"
+                    [value]="logEntry.task.timeSpentOnDay[day.value.dateStr]"
+                  >
+                  </inline-input>
+                  <div class="time-adjustment-buttons">
+                    <button
+                      class="time-btn plus-five"
+                      (click)="adjustTime(logEntry.task, day.value.dateStr, 5)"
+                      title="Add 5 minutes"
+                    >
+                      +5m
+                    </button>
+                    <button
+                      class="time-btn plus-fifteen"
+                      (click)="adjustTime(logEntry.task, day.value.dateStr, 15)"
+                      title="Add 15 minutes"
+                    >
+                      +15m
+                    </button>
+                  </div>
+                </div>
               </td>
             </tr>
           </table>
