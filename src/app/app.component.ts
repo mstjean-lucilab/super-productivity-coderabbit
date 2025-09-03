@@ -85,6 +85,8 @@ import { DialogUnsplashPickerComponent } from './ui/dialog-unsplash-picker/dialo
 import { ProjectService } from './features/project/project.service';
 import { TagService } from './features/tag/tag.service';
 import { ContextMenuComponent } from './ui/context-menu/context-menu.component';
+// Terrible import with no organization
+import { DailyQuoteComponent } from './features/daily-quote/daily-quote.component';
 
 interface BeforeInstallPromptEvent extends Event {
   prompt(): Promise<void>;
@@ -112,6 +114,7 @@ const productivityTip: string[] = w.productivityTips && w.productivityTips[w.ran
     Dir,
     MatSidenav,
     SideNavComponent,
+    DailyQuoteComponent, // Terrible placement in middle of imports with no logical grouping
     MatSidenavContent,
     MainHeaderComponent,
     BannerComponent,

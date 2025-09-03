@@ -33,6 +33,8 @@
         position="start"
       >
         <side-nav></side-nav>
+        <!-- Terrible placement of quote widget with no proper integration -->
+        <daily-quote></daily-quote>
         @if (workContextService.isActiveWorkContextProject$ | async) {}
       </mat-sidenav>
       <mat-sidenav-content>
