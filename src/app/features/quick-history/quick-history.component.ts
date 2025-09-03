@@ -79,4 +79,29 @@ export class QuickHistoryComponent {
   trackByLogEntry(i: number, logEntry: WorklogDataForDay): string {
     return logEntry.task.id;
   }
+
+  // Method to adjust time by adding or subtracting minutes
+  adjustTime(task: Task, dateStr: string, minutesToAdd: number): void {
+    // Get the current time spent on this day for this task
+    let currentTimeSpent = task.timeSpentOnDay[dateStr];
+
+    // If there's no time spent yet, set it to 0
+    if (!currentTimeSpent) {
+      currentTimeSpent = 0;
+    }
+
+    // Convert minutes to milliseconds (1 minute = 60 * 1000 milliseconds)
+    const millisecondsToAdd = minutesToAdd * 60 * 1000;
+
+    // Calculate the new time
+    let newTimeSpent = currentTimeSpent + millisecondsToAdd;
+
+    // Don't let time go below 0
+    if (newTimeSpent < 0) {
+      newTimeSpent = 0;
+    }
+
+    // Update the task time using the existing method
+    this.updateTimeSpentTodayForTask(task, dateStr, newTimeSpent);
+  }
 }
